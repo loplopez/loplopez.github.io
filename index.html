@@ -3,55 +3,330 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Pages Site</title>
+  <title>Ezequiel López-López</title>
+
+  <!-- Vintage terminal + MIT Media Lab hybrid style -->
   <style>
+    :root {
+      /* Solarized light-inspired palette */
+      --bg-main: #fdf6e3;        /* base3 */
+      --bg-elevated: #eee8d5;    /* base2 */
+      --border-subtle: #d3cbb3;  /* soft border */
+      --text-main: #073642;      /* base02 */
+      --text-muted: #586e75;     /* base01 */
+      --accent-blue: #268bd2;    /* solarized blue */
+      --accent-green: #859900;   /* solarized green */
+      --accent-cyan: #2aa198;    /* solarized cyan */
+      --chip-bg: #eae1c8;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0f172a;
-      color: #e5e7eb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background:
+        linear-gradient(rgba(255,255,255,0.35) 1px, transparent 1px),
+        radial-gradient(circle at top, #fffdf5 0, var(--bg-main) 55%, #f5ecd7 100%);
+      background-size: 100% 2px, cover; /* subtle horizontal scanline */
     }
-    .card {
-      background: #020617;
-      padding: 2rem 3rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-      max-width: 480px;
-      text-align: center;
-    }
-    h1 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 2rem;
-    }
-    p {
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      line-height: 1.5;
-    }
-    a.button {
-      display: inline-block;
-      padding: 0.6rem 1.3rem;
-      border-radius: 999px;
+
+    a {
+      color: var(--accent-blue);
       text-decoration: none;
-      background: #22c55e;
-      color: #022c22;
-      font-weight: 600;
     }
-    a.button:hover {
-      opacity: 0.9;
+    a:hover { text-decoration: underline; }
+
+    header {
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(253, 246, 227, 0.96);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+    }
+
+    .brand {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+    nav a:hover { color: var(--accent-blue); }
+
+    /* HERO */
+    .hero { padding: 3.5rem 0 3rem; }
+
+    .hero-inner {
+      border-radius: 1rem;
+      border: 1px solid var(--border-subtle);
+      background:
+        linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.95)),
+        repeating-linear-gradient(
+          0deg,
+          rgba(238,232,213,0.8),
+          rgba(238,232,213,0.8) 1px,
+          rgba(253,246,227,0.9) 1px,
+          rgba(253,246,227,0.9) 3px
+        ); /* light CRT / paper texture */
+      padding: 2.4rem 2rem 2.6rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.06);
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .terminal-line {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.9rem;
+      color: var(--accent-green);
+      margin-bottom: 0.6rem;
+    }
+    .terminal-line span.prompt { color: var(--accent-green); }
+    .terminal-line span.path { color: var(--accent-cyan); }
+
+    .hero h1 {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 2.2rem;
+      margin: 0.5rem 0 0.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 .cursor {
+      display: inline-block;
+      width: 0.65ch;
+      background: var(--accent-green);
+      margin-left: 0.1rem;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .hero-subtitle {
+      font-size: 1.02rem;
+      line-height: 1.7;
+      max-width: 42rem;
+      color: var(--text-muted);
+    }
+
+    .hero-tags {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag-chip {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: var(--chip-bg);
+      color: var(--text-muted);
+    }
+
+    /* SECTIONS */
+    section { padding: 3rem 0; }
+    section + section { border-top: 1px solid var(--border-subtle); }
+
+    .section-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-keycap {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.35rem;
+      border: 1px solid var(--border-subtle);
+      background: #f8f1dc;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.7), 0 2px 0 rgba(0,0,0,0.06);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    h2 {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 1.25rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0;
+      color: var(--accent-blue);
+    }
+
+    .section-body {
+      max-width: 46rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    /* Publications grid */
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .pub-card {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border-subtle);
+      background: #fdfaf1;
+      padding: 1rem 1.1rem 1.1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    }
+
+    .pub-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
+    }
+
+    .pub-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .pub-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.4rem;
+    }
+
+    .pub-tag {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.45rem;
+      border-radius: 999px;
+      background: #eee3c8;
+      color: var(--text-muted);
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    details.pub-group {
+      margin-bottom: 1.5rem;
+    }
+
+    details.pub-group > summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+    }
+
+    details.pub-group > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.pub-group > summary::before {
+      content: "▸";
+      display: inline-block;
+      margin-right: 0.4rem;
+      color: var(--accent-blue);
+      transition: transform 0.15s ease;
+    }
+
+    details[open].pub-group > summary::before {
+      transform: rotate(90deg);
+    }
+
+    footer {
+      padding: 2rem 0 1.5rem;
+      font-size: 0.8rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 720px) {
+      .header-inner { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+      nav a { margin-left: 0; margin-right: 1.25rem; }
+      .hero-inner { padding: 2rem 1.5rem 2.2rem; }
+      .hero h1 { font-size: 1.9rem; }
     }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>Welcome to my GitHub Pages site 👋</h1>
-    <p>This site is hosted with GitHub Pages and written in plain HTML.</p>
-    <a class="button" href="https://github.com">View my GitHub profile</a>
-  </div>
-</body>
-</html>
+  <header>
+    <div class="container header-inner">
+      <div class="brand">EZEQUIEL LÓPEZ-LÓPEZ</div>
+      <nav>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="terminal-line">
+            <span class="prompt">ezequiel@genai-lab</span>:<span class="path">~</span>$ whoami
+          </div>
+          <h1>
+            Ezequiel López-López<span class="cursor"></span>
+          </h1>
+          <p class="hero-subtitle">
+            Computational social scientist studying GenAI-mediated information ecosystems and
+            epistemic risks — how generative AI reshapes belief formation, misinformation, and
+            public knowledge.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH SECTION -->
+  <section id="research">
+    <div class="container">
+      <h2>Research</h2>
+      <div class="section-body">
+        My work focuses on the epistemic risks introduced as generative AI becomes a central
+        mediator of digital information flows. I study how LLMs influence information-seeking,
+        narrative dynamics, communication patterns, and misinformation, with a focus on belief
+        formation and public knowledge.
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS SECTION -->
+  <section id="publications">
+    <div class="container">
+      <h2>Selected Publications</h2>
+      <ul class="pub-list">
