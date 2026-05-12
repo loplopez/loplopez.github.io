@@ -1,0 +1,1019 @@
+{
+  "publications": [
+    {
+      "id": "nhb-2024-collective-intelligence",
+      "featured": true,
+      "title": "How large language models can reshape collective intelligence",
+      "authors": "Burton, J. W., Lopez-Lopez, E., Hechtlinger, S., Rahwan, Z., …, & Hertwig, R.",
+      "authorPos": "second author",
+      "year": 2024,
+      "venue": "Nature Human Behaviour",
+      "type": "journal",
+      "cited": 179,
+      "url": "https://doi.org/10.1038/s41562-024-01959-9",
+      "summary": "When human-LLM teams outperform humans alone, and how AI alters the dynamics of group problem-solving.",
+      "media": [
+        "Forbes",
+        "El País"
+      ],
+      "tags": [
+        "Collective intelligence",
+        "LLMs"
+      ]
+    },
+    {
+      "id": "arxiv-2024-yakura-spoken-communication",
+      "featured": true,
+      "title": "Empirical evidence of LLMs' influence on human spoken communication",
+      "authors": "Yakura, H.*, Lopez-Lopez, E.*, Brinkmann, L.*, Serna, I., Gupta, P., & Rahwan, I.",
+      "authorPos": "co-first author",
+      "year": 2024,
+      "venue": "arXiv:2409.01754",
+      "type": "under review",
+      "cited": 70,
+      "url": "https://arxiv.org/abs/2409.01754",
+      "summary": "First large-scale causal evidence of LLM-shaped lexical patterns diffusing into human spoken language.",
+      "media": [
+        "Scientific American",
+        "The Verge",
+        "El País",
+        "DIE ZEIT",
+        "ABC Cultural"
+      ],
+      "tags": [
+        "Linguistic drift",
+        "GenAI",
+        "Cultural evolution"
+      ]
+    },
+    {
+      "id": "anyas-2025-genai-confirmation-bias",
+      "featured": true,
+      "title": "Generative AI-mediated confirmation bias in health information seeking",
+      "authors": "Lopez-Lopez, E.*, Abels, C. M.*, Holford, D.*, Herzog, S. M., & Lewandowsky, S.",
+      "authorPos": "co-first author",
+      "year": 2025,
+      "venue": "Annals of the New York Academy of Sciences",
+      "type": "journal",
+      "cited": 19,
+      "url": "https://doi.org/10.1111/nyas.15413",
+      "summary": "Empirical evidence that LLMs can systematically amplify confirmation bias in health information seeking.",
+      "media": [
+        "Der Spiegel"
+      ],
+      "tags": [
+        "GenAI",
+        "Health",
+        "Epistemic risk"
+      ]
+    },
+    {
+      "id": "bsp-2025-hypercustomization",
+      "title": "The governance & behavioral challenges of generative AI's hypercustomization capabilities",
+      "authors": "Abels, C. M.*, Lopez-Lopez, E.*, Burton, J. W., Holford, D., Brinkmann, L., Herzog, S. M., & Lewandowsky, S.",
+      "authorPos": "co-first author",
+      "year": 2025,
+      "venue": "Behavioral Science & Policy",
+      "type": "journal",
+      "cited": 10,
+      "url": "https://doi.org/10.1177/23794607251347020",
+      "summary": "How hyperpersonalised GenAI systems may fragment public knowledge, and the governance challenges that follow.",
+      "media": [
+        "Der Spiegel"
+      ],
+      "tags": [
+        "Policy",
+        "Hypercustomization",
+        "GenAI"
+      ]
+    },
+    {
+      "id": "hssc-2024-anti-vax",
+      "title": "Identifying the underlying psychological constructs from self-expressed anti-vaccination argumentation",
+      "authors": "Holford, D., Lopez-Lopez, E., Fasce, A., Karlsson, L. C., & Lewandowsky, S.",
+      "authorPos": "second author",
+      "year": 2024,
+      "venue": "Humanities and Social Sciences Communications",
+      "type": "journal",
+      "cited": 9,
+      "url": "https://doi.org/10.1057/s41599-024-03416-4",
+      "summary": "Large-scale text analysis mapping the psychological dimensions underlying anti-vaccination discourse.",
+      "media": [],
+      "tags": [
+        "Health",
+        "Misinformation"
+      ]
+    },
+    {
+      "id": "iberlef-2021-sexism",
+      "title": "Combining transformer-based models with traditional ML approaches for sexism identification in social networks",
+      "authors": "Lopez-Lopez, E., Carrillo-de-Albornoz, J., & Plaza, L.",
+      "authorPos": "first author",
+      "year": 2021,
+      "venue": "Proceedings of IberLEF 2021, CEUR Workshop Proceedings",
+      "type": "conf. proc.",
+      "cited": 4,
+      "url": "https://ceur-ws.org/Vol-2943/exist_paper10.pdf",
+      "summary": "Hybrid pipeline combining transformer-based and classical ML approaches for sexism identification on social media.",
+      "media": [],
+      "tags": [
+        "NLP",
+        "Social media"
+      ]
+    },
+    {
+      "id": "arxiv-2026-boosting-metacognition",
+      "title": "Boosting metacognition in entangled human–AI interaction to navigate cognitive–behavioral drift",
+      "authors": "Lopez-Lopez, E., Abels, C. M., Lorenz-Spreen, P., Lewandowsky, S., & Herzog, S. M.",
+      "authorPos": "first author",
+      "year": 2026,
+      "venue": "arXiv:2602.01959",
+      "type": "under review",
+      "cited": 1,
+      "url": "https://arxiv.org/abs/2602.01959",
+      "summary": "Argues for boosting users' metacognition as a way to navigate the cognitive-behavioural drift produced by entangled human-AI interaction.",
+      "media": [],
+      "tags": [
+        "Metacognition",
+        "GenAI",
+        "Behavioural drift"
+      ]
+    },
+    {
+      "id": "in-prep-characterizing-views",
+      "title": "Characterizing similarities and differences in people's views based on open-ended expressions",
+      "authors": "Lopez-Lopez, E., & Herzog, S. M.",
+      "authorPos": "first author",
+      "year": 2026,
+      "venue": "Manuscript in preparation",
+      "type": "in prep.",
+      "cited": null,
+      "summary": "Methodology paper combining LLMs and network analysis to surface and quantify perspectives from open-ended responses.",
+      "media": [],
+      "tags": [
+        "Methods",
+        "LLMs",
+        "Perspectives"
+      ]
+    },
+    {
+      "id": "in-prep-australia-voice",
+      "title": "A scalable LLM-based framework for linking information environments and collective perceptions: Evidence from the 2023 Australian Voice referendum",
+      "authors": "Lopez-Lopez, E., Stinson, C., …, & Lewandowsky, S.",
+      "authorPos": "first author",
+      "year": 2026,
+      "venue": "Manuscript in preparation",
+      "type": "in prep.",
+      "cited": null,
+      "summary": "Scalable LLM-based framework for linking information environments and collective perceptions, applied to Australia's 2023 Voice referendum.",
+      "media": [],
+      "tags": [
+        "LLMs",
+        "Misinformation",
+        "Political attitudes",
+        "Australia"
+      ]
+    },
+    {
+      "id": "in-prep-europe-think",
+      "title": "What does Europe think? Citizen-perspective elicitation on the challenges of our time across six countries",
+      "authors": "Lopez-Lopez, E., Oswald, L., Lorenz-Spreen, P., & Herzog, S. M.",
+      "authorPos": "first author",
+      "year": 2026,
+      "venue": "Manuscript in preparation",
+      "type": "in prep.",
+      "cited": null,
+      "summary": "Cross-country citizen-perspective elicitation on contemporary challenges across six European countries.",
+      "media": [],
+      "tags": [
+        "Citizen perspectives",
+        "Europe",
+        "Cross-cultural"
+      ]
+    },
+    {
+      "id": "in-prep-zeitenwende-rtt",
+      "title": "Structuring scalable collective deliberation via Rapid Think Tanks: The Zeitenwende case study",
+      "authors": "Lopez-Lopez, E.*, Abels, C. M.*, Herzog, S. M., & Lewandowsky, S.",
+      "authorPos": "co-first author",
+      "year": 2026,
+      "venue": "Manuscript in preparation",
+      "type": "in prep.",
+      "cited": null,
+      "summary": "Application of the Rapid Think Tanks methodology to structure collective deliberation on the Zeitenwende foreign-policy debate.",
+      "media": [],
+      "tags": [
+        "Deliberation",
+        "Foreign policy",
+        "RTT"
+      ]
+    },
+    {
+      "id": "in-prep-homogenization",
+      "title": "The Homogenization Dilemma: Generative AI's challenges and opportunities for task groups",
+      "authors": "Lopez-Lopez, E., & Zöller, N.",
+      "authorPos": "first author",
+      "year": 2026,
+      "venue": "Manuscript in preparation",
+      "type": "in prep.",
+      "cited": null,
+      "summary": "How generative AI homogenizes contributions in task groups, and the trade-offs for collective intelligence.",
+      "media": [],
+      "tags": [
+        "GenAI",
+        "Task groups",
+        "Cultural drift"
+      ]
+    },
+    {
+      "id": "bsp-2025-citizen-perspectives",
+      "title": "Surfacing citizens' policy perspectives at scale in the age of LLMs",
+      "authors": "Lopez-Lopez, E., & Herzog, S. M.",
+      "authorPos": "first author",
+      "year": 2025,
+      "venue": "Behavioral Science & Policy",
+      "type": "journal",
+      "cited": null,
+      "url": "https://doi.org/10.1177/23794607251346311",
+      "summary": "A method that combines LLMs and network analysis to elicit, structure, and compare citizens' perspectives on complex policy issues.",
+      "media": [],
+      "tags": [
+        "Policy",
+        "LLMs",
+        "Citizen perspectives"
+      ]
+    },
+    {
+      "id": "leftwing-2025-systematic-review",
+      "title": "A comprehensive systematic review of the psychometrics of left-wing ideology",
+      "authors": "Avendaño, D., Lopez-Lopez, E., Sánchez-Zavala, A., Gayozzo, P., Brisuela Blume, L., Díaz, J., Santibáñez-Palma, J. F., Martínez-Vázquez, A., García-Belaunde, V., Arango, E., & Fasce, A.",
+      "authorPos": "second author",
+      "year": 2025,
+      "venue": "Manuscript under review",
+      "type": "under review",
+      "cited": null,
+      "summary": "Systematic review of psychometric instruments for left-wing ideology.",
+      "media": [],
+      "tags": [
+        "Psychometrics",
+        "Political ideology",
+        "Review"
+      ]
+    },
+    {
+      "id": "fasce-2025-peru-medicine",
+      "title": "Psychosocial predictors and justification patterns of traditional and alternative medicine in Peru",
+      "authors": "Fasce, A., Rosales-Trabuco, J., Rodríguez-Ferreiro, J., Barberia, I., Pinedo-Yzaguirre, E., Nuñez, J., Ortiz-Treviños, W., Moncada, C., Reyes-Bossio, M., Carbajal-León, C., & Lopez-Lopez, E.",
+      "authorPos": "last author",
+      "year": 2025,
+      "venue": "Manuscript under review",
+      "type": "under review",
+      "cited": null,
+      "summary": "Psychosocial predictors and justification patterns underlying use of traditional and alternative medicine in Peru.",
+      "media": [],
+      "tags": [
+        "Health",
+        "Misinformation",
+        "Cross-cultural"
+      ]
+    },
+    {
+      "id": "in-prep-valencia-floods",
+      "title": "Misinformation and narrative evolution in climate disasters: Evidence from the 2024 Valencia flash floods",
+      "authors": "Lopez-Lopez, E., & Lorenz-Spreen, P.",
+      "authorPos": "first author",
+      "year": 2025,
+      "venue": "Manuscript in preparation",
+      "type": "in prep.",
+      "cited": null,
+      "summary": "Empirical study of misinformation and narrative evolution during the 2024 Valencia flash floods.",
+      "media": [],
+      "tags": [
+        "Misinformation",
+        "Climate disasters",
+        "Narrative analysis"
+      ]
+    },
+    {
+      "id": "rtt-2024-preprint",
+      "title": "Rapid Think Tanks (RTTs): An atomic approach to accelerating collective deliberation",
+      "authors": "Lopez-Lopez, E., Abels, C. M., Holford, D., & Hahn, U.",
+      "authorPos": "first author",
+      "year": 2024,
+      "venue": "OSF",
+      "type": "preprint",
+      "cited": null,
+      "url": "https://osf.io/",
+      "summary": "A methodology for rapidly convening and structuring expert and citizen input using AI-supported workflows.",
+      "media": [],
+      "tags": [
+        "Deliberation",
+        "Methods"
+      ]
+    }
+  ],
+  "venn": {
+    "centreLabel": "research direction",
+    "_howToEdit": "Coordinates target the rotated-triangle geometry (policy at bottom apex): qual circle at (187,235), ai at (413,235), policy at (300,430), all R=150, centroid (300,300). To move a paper, cut its line from one region's array and paste into another. Position (x,y) is optional — leave it out and the renderer auto-places the paper inside its region.",
+    "regions": {
+      "qual": {
+        "_description": "AI-assisted qualitative research (Q only) — upper-left circle",
+        "_anchorXY": [
+          180,
+          215
+        ],
+        "papers": [
+          {
+            "id": "iberlef-2021-sexism",
+            "x": 153,
+            "y": 215
+          },
+          {
+            "id": "hssc-2024-anti-vax",
+            "x": 144,
+            "y": 279
+          },
+          {
+            "id": "in-prep-characterizing-views",
+            "x": 204,
+            "y": 176
+          },
+          {
+            "id": "leftwing-2025-systematic-review",
+            "x": 171,
+            "y": 324
+          },
+          {
+            "id": "fasce-2025-peru-medicine",
+            "x": 256,
+            "y": 176
+          }
+        ]
+      },
+      "qual+ai": {
+        "_description": "Empirical drift / measurement (Q ∩ Societal impacts of AI) — top centre",
+        "_anchorXY": [
+          300,
+          200
+        ],
+        "papers": []
+      },
+      "qual+policy": {
+        "_description": "Citizen voice in policy (Q ∩ Policy implications) — left intersection",
+        "_anchorXY": [
+          225,
+          335
+        ],
+        "papers": [
+          {
+            "id": "rtt-2024-preprint",
+            "x": 199,
+            "y": 334
+          },
+          {
+            "id": "in-prep-zeitenwende-rtt",
+            "x": 245,
+            "y": 315
+          },
+          {
+            "id": "bsp-2025-citizen-perspectives",
+            "x": 224,
+            "y": 372
+          },
+          {
+            "id": "in-prep-europe-think",
+            "x": 247,
+            "y": 333
+          },
+          {
+            "id": "in-prep-australia-voice",
+            "x": 240,
+            "y": 364
+          }
+        ]
+      },
+      "centre": {
+        "_description": "Research direction (Q ∩ AI ∩ Policy) — middle",
+        "_anchorXY": [
+          300,
+          300
+        ],
+        "papers": [
+          {
+            "id": "arxiv-2026-boosting-metacognition",
+            "x": 296,
+            "y": 298
+          }
+        ]
+      },
+      "ai+policy": {
+        "_description": "Anticipating GenAI risks (Societal impacts ∩ Policy) — right intersection",
+        "_anchorXY": [
+          395,
+          350
+        ],
+        "papers": [
+          {
+            "id": "anyas-2025-genai-confirmation-bias",
+            "x": 369,
+            "y": 340
+          },
+          {
+            "id": "bsp-2025-hypercustomization",
+            "x": 388,
+            "y": 357
+          },
+          {
+            "id": "nhb-2024-collective-intelligence",
+            "x": 400,
+            "y": 337
+          },
+          {
+            "id": "in-prep-homogenization",
+            "x": 413,
+            "y": 365
+          }
+        ]
+      },
+      "ai": {
+        "_description": "Societal impacts of AI (only) — upper-right crescent",
+        "_anchorXY": [
+          524,
+          233
+        ],
+        "papers": [
+          {
+            "id": "arxiv-2024-yakura-spoken-communication",
+            "x": 524,
+            "y": 233
+          }
+        ]
+      },
+      "policy": {
+        "_description": "Policy implications (only) — bottom apex",
+        "_anchorXY": [
+          284,
+          487
+        ],
+        "papers": [
+          {
+            "id": "in-prep-valencia-floods",
+            "x": 284,
+            "y": 487
+          }
+        ]
+      }
+    }
+  },
+  "education": [
+    {
+      "id": "phd-tu-berlin-cs",
+      "level": "PhD",
+      "field": "Computer Science",
+      "institution": "TU Berlin",
+      "country": "Germany",
+      "start": "2022",
+      "end": "2026",
+      "status": "defense expected 2026",
+      "thesis": {
+        "title": "The Dual Impact of Large Language Models in Society and Policymaking",
+        "type": "cumulative thesis",
+        "supervisor": "Stefan Herzog",
+        "fundingProgramme": "DFG POLTOOLS",
+        "host": "MPI for Human Development · Center for Adaptive Rationality (where the work was developed)"
+      }
+    },
+    {
+      "id": "msc-uned-language-technologies",
+      "level": "MSc",
+      "field": "Language Technologies",
+      "fieldOnDiploma": "Máster Universitario en Lenguajes y Sistemas Informáticos",
+      "fieldOnDiplomaNote": "The programme was later renamed to Máster Universitario en Tecnologías del Lenguaje (Master's Degree in Language Technologies); the topical content is the same; the modern name is used in display.",
+      "fieldDisplayed": "Language Technologies",
+      "fieldOriginal": "Máster Universitario en Tecnologías del Lenguaje",
+      "institution": "UNED",
+      "institutionLong": "Universidad Nacional de Educación a Distancia",
+      "school": "Escuela Técnica Superior de Ingeniería Informática",
+      "country": "Spain · remote",
+      "modality": "online / distance learning",
+      "language": "Spanish and English",
+      "start": "2018",
+      "end": "2020",
+      "completionDate": "2020-09-23",
+      "diplomaIssued": "2021-01-20",
+      "ectsTotal": 60,
+      "ectsCoursework": 30,
+      "ectsThesis": 30,
+      "overallGrade": 8.5,
+      "url": "https://www.uned.es/universidad/inicio/en/estudios/masteres/master-universitario-en-tecnologias-del-lenguaje.html",
+      "specialisation": "Natural Language Processing & Information Retrieval",
+      "focus": "NLP, web mining, search and retrieval, graph-based language methods",
+      "thesis": {
+        "title": "Controversy detection in online drug-review forums",
+        "moduleName": "Research Work: Natural Language Processing and Information Retrieval",
+        "ects": 30,
+        "grade": 9,
+        "gradeQualitative": "Sobresaliente"
+      },
+      "courses": [
+        {
+          "name": "Web Mining",
+          "nameOriginal": "Minería de la Web",
+          "ects": 6,
+          "grade": 8.4,
+          "gradeQualitative": "Notable"
+        },
+        {
+          "name": "Web Search Engines",
+          "nameOriginal": "Motores de Búsqueda Web",
+          "ects": 6,
+          "grade": 9.5,
+          "gradeQualitative": "Sobresaliente"
+        },
+        {
+          "name": "Data Mining",
+          "nameOriginal": "Minería de Datos",
+          "ects": 6,
+          "grade": 6.8,
+          "gradeQualitative": "Aprobado"
+        },
+        {
+          "name": "Textual Information Discovery",
+          "nameOriginal": "Descubrimiento de Información en Textos",
+          "ects": 6,
+          "grade": 7,
+          "gradeQualitative": "Notable"
+        },
+        {
+          "name": "Graph-Based Techniques Applied to Natural Language Processing",
+          "nameOriginal": "Técnicas Basadas en Grafos Aplicados al Procesamiento del Lenguaje Natural",
+          "ects": 6,
+          "grade": null,
+          "gradeQualitative": "Notable"
+        }
+      ]
+    },
+    {
+      "id": "bsc-ugr-physics",
+      "level": "BSc",
+      "field": "Physics",
+      "fieldOriginal": "Graduado en Física",
+      "institution": "Universidad de Granada",
+      "country": "Spain",
+      "start": "2011",
+      "end": "2016",
+      "completionDate": "2017-06-06",
+      "ectsTotal": 240,
+      "ectsBasic": 60,
+      "ectsRequired": 114,
+      "ectsOptional": 60,
+      "ectsThesis": 6,
+      "overallGrade": 6.2,
+      "thesis": {
+        "title": "Trabajo Fin de Grado",
+        "ects": 6,
+        "grade": 6.7
+      },
+      "focus": "Theoretical physics with a strong mathematical-methods spine and computational methods (programming, numerical simulation), plus statistical mechanics and complex systems on the optional side.",
+      "majorAreas": [
+        "Mathematical methods (I, II, III + Mathematical Methods of Physics)",
+        "Quantum mechanics & quantum physics",
+        "Statistical physics & statistical mechanics",
+        "Electromagnetism & electrodynamics",
+        "Nuclear and particle physics",
+        "Computational methods (Programming · Numerical Methods · Simulation)"
+      ],
+      "selectedCoursesOptional": [
+        "Statistical Mechanics",
+        "Mathematical Methods of Physics I",
+        "Field Theory and Particles",
+        "Mathematical Physics",
+        "Biophysics",
+        "Nanoelectronics",
+        "Radioactivity and Applications",
+        "Logic and Philosophy of Science",
+        "English for Specific Purposes (B2)"
+      ],
+      "extracurricular": [
+        "Cosmology",
+        "Electrodynamics",
+        "Foundations of Astrophysics",
+        "Physics of Complex Systems",
+        "General Relativity"
+      ],
+      "_additionalCourseworkNote": "The 240-ECTS Grado en Física plan was adapted from the older 5-year 'Licenciado en Física' plan (B.O.E. 26/11/97). Some Licenciado courses were taken and passed but only appear in the Spanish transcripts — not in the final EU Diploma Supplement. The mathematical-physics specialisation thread is the most CV-relevant.",
+      "additionalCourseworkLicenciadoPlan": {
+        "mathematicalPhysics": [
+          {
+            "name": "Quantum Field Theory",
+            "nameOriginal": "Teoría Cuántica de Campos",
+            "ects": 7.5,
+            "grade": 8.5,
+            "gradeQualitative": "Notable"
+          },
+          {
+            "name": "Mathematical Physics · Hilbert Spaces and Linear Operators",
+            "nameOriginal": "Física Matemática · Espacios de Hilbert y Operadores Lineales",
+            "ects": 6,
+            "grade": 7,
+            "gradeQualitative": "Notable"
+          },
+          {
+            "name": "Mathematical Physics · Group Theory",
+            "nameOriginal": "Física Matemática · Teoría de Grupos",
+            "ects": 6,
+            "grade": 5,
+            "gradeQualitative": "Aprobado"
+          },
+          {
+            "name": "Mathematical Physics · Differential Geometry and Manifolds",
+            "nameOriginal": "Física Matemática · Geometría Diferencial y Variedades",
+            "ects": 6,
+            "grade": 5.6,
+            "gradeQualitative": "Aprobado"
+          },
+          {
+            "name": "Mathematical Physics · PDEs and Integral Equations",
+            "nameOriginal": "Física Matemática · Ecuaciones en Derivadas Parciales e Integrales",
+            "ects": 6,
+            "grade": 5.5,
+            "gradeQualitative": "Aprobado"
+          },
+          {
+            "name": "Mathematical Methods of Physics IV",
+            "nameOriginal": "Métodos Matemáticos de la Física IV",
+            "ects": 9,
+            "grade": 5.4,
+            "gradeQualitative": "Aprobado"
+          }
+        ],
+        "physicsAndPhilosophy": [
+          {
+            "name": "Foundations of Quantum Physics · Historical and Philosophical Aspects",
+            "nameOriginal": "Fundamentos de Física Cuántica · Aspectos Históricos y Filosóficos",
+            "ects": 6,
+            "grade": 7.3,
+            "gradeQualitative": "Notable"
+          },
+          {
+            "name": "Foundational Aspects of Scientific Knowledge",
+            "nameOriginal": "Fundamentos Formales del Conocimiento Científico",
+            "ects": 6,
+            "grade": 6,
+            "gradeQualitative": "Aprobado"
+          }
+        ],
+        "experimentalAndApplied": [
+          {
+            "name": "Electronics I",
+            "nameOriginal": "Electrónica I",
+            "ects": 6,
+            "grade": 7.5,
+            "gradeQualitative": "Notable"
+          },
+          {
+            "name": "Electronics II",
+            "nameOriginal": "Electrónica II",
+            "ects": 6,
+            "grade": 6.3,
+            "gradeQualitative": "Aprobado"
+          },
+          {
+            "name": "Experimental Techniques in Physics I (Mechanics & Thermo.)",
+            "nameOriginal": "Técnicas Experimentales en Física I",
+            "ects": 7.5,
+            "grade": 5,
+            "gradeQualitative": "Aprobado"
+          },
+          {
+            "name": "Experimental Techniques in Physics II (Electromagnetism, Optics, Quantum)",
+            "nameOriginal": "Técnicas Experimentales en Física II",
+            "ects": 10.5,
+            "grade": 6,
+            "gradeQualitative": "Aprobado"
+          }
+        ],
+        "tooling": [
+          {
+            "name": "Course in LaTeX",
+            "nameOriginal": "Curso de LaTeX",
+            "ects": 3,
+            "grade": null,
+            "gradeQualitative": "Reconocida"
+          },
+          {
+            "name": "Animation and Videogames Course",
+            "nameOriginal": "Curso de Animación y Videojuegos",
+            "ects": 3,
+            "grade": null,
+            "gradeQualitative": "Reconocida"
+          },
+          {
+            "name": "Foundations of Programming",
+            "nameOriginal": "Fundamentos de la Programación",
+            "ects": 4.5,
+            "grade": 5.8,
+            "gradeQualitative": "Aprobado"
+          }
+        ]
+      },
+      "languages": [
+        "Spanish",
+        "English (B2 Cambridge)"
+      ],
+      "membership": "Deutsche Physikalische Gesellschaft (DPG)"
+    }
+  ],
+  "grants": [
+    {
+      "id": "ulima-cic-2026-incoherence",
+      "title": "Implications of tolerance to incoherence and receptivity to pseudoprofundity in the acceptance of misinformation",
+      "titleOriginal": "Implicaciones de la tolerancia a la incoherencia y la receptividad a la pseudoprofundidad en la aceptación de desinformación",
+      "role": "External researcher (Co-investigator)",
+      "pi": "Rosales Trabuco, J. E.",
+      "coIs": [
+        "Burga León, A. A. (Adjunct researcher)",
+        "Fasce, A. (External researcher)",
+        "Adrián-Ventura, J. (External researcher)",
+        "Avendaño Escalante, D. (External researcher)",
+        "Lopez-Lopez, E. (External researcher)",
+        "Schmid, P. (External researcher)"
+      ],
+      "funder": "Universidad de Lima · Concurso de Investigación Científica 2026 (CIC2026)",
+      "host": "Universidad de Lima · Instituto de Investigación Científica (IDIC)",
+      "modality": "Modalidad abierta",
+      "start": "2026-04",
+      "end": "2027-03",
+      "dateLabel": "Apr 2026 — Mar 2027",
+      "status": "awarded",
+      "url": "https://cris.ulima.edu.pe/es/projects/implicaciones-de-la-tolerancia-a-la-incoherencia-y-la-receptivida/",
+      "summary": "Bi-national project (Peru & Spain) examining whether tolerance for epistemic incoherence and receptivity to pseudoprofundity predict the acceptance of political and scientific misinformation. Study 1 combines NLP analysis of decades of parliamentary records with population-representative cross-sectional surveys (N≈1,000 per country) to estimate prevalence and predictors, and to validate a Spanish-language psychometric measure of incoherence tolerance. Study 2 is a 3×1 between-groups experiment manipulating exposure to relativist vs truth-committed political discourse and measuring downstream acceptance of incoherence, pseudoprofundity, and misinformation.",
+      "tags": [
+        "Misinformation",
+        "Psychometrics",
+        "Pseudoprofundity",
+        "Populism",
+        "Cross-cultural",
+        "NLP"
+      ]
+    }
+  ],
+  "workshops": [
+    {
+      "year": 2025,
+      "month": "DEC",
+      "date": "Dec 4, 2025",
+      "role": "organising committee",
+      "title": "Anti-Autocracy Summit",
+      "subtitle": "A strategic convening of scientists, academics, researchers, and science communicators working against autocratic backsliding and threats to scholarship",
+      "venue": "SciBeh · Online",
+      "url": "https://www.scibeh.org/events/workshop2025_antiautocracy_summit/"
+    },
+    {
+      "year": 2025,
+      "month": "MAY",
+      "date": "May 26, 2025",
+      "role": "co-organizer",
+      "title": "Erster deutscher Workshop zur Erkennung und Bekämpfung von Desinformationen, Misinformation und Hate Speech",
+      "subtitle": "für Medienschaffende und Kommunikationspraktiker:innen",
+      "venue": "Max Planck Institute for Human Development, Berlin",
+      "url": ""
+    },
+    {
+      "year": 2025,
+      "month": "FEB",
+      "date": "Feb 25, 2025",
+      "role": "co-organizer",
+      "title": "Safeguarding Scholarship and Research in (Emerging) Autocracies",
+      "subtitle": "SciBeh 2025 Virtual Workshop",
+      "venue": "SciBeh · Online",
+      "url": "https://www.scibeh.org/events/workshop2025_safeguarding_scholarship/"
+    },
+    {
+      "year": 2024,
+      "month": "DEC",
+      "date": "Dec 4–6, 2024",
+      "role": "support team",
+      "title": "Patient, person, people: developing a public health perspective on online disinformation and psychological manipulation",
+      "subtitle": "SciBeh Virtual Workshop",
+      "venue": "SciBeh · Online",
+      "url": "https://www.scibeh.org/events/workshop2024_patient-person-people/"
+    },
+    {
+      "year": 2024,
+      "month": "JUL",
+      "date": "Jul 6, 2024",
+      "role": "co-organizer",
+      "title": "Zeitenwende — Rethinking Foreign Policy: How do we initiate a change in people's minds?",
+      "subtitle": "Hertie School Summit 2024",
+      "venue": "Hertie School, Berlin",
+      "url": "https://www.fellows-ghst.de/summit2024/hertie-summit-2024-die-zeitenwende-in-den-koepfen-anstossen/"
+    },
+    {
+      "year": 2024,
+      "month": "MAR",
+      "date": "Mar 6–7, 2024",
+      "role": "co-organizer",
+      "title": "Epistemic Boundaries",
+      "subtitle": "SciBeh 2024 Virtual Workshop",
+      "venue": "SciBeh · Online",
+      "url": "https://www.scibeh.org/events/workshop2024/"
+    },
+    {
+      "year": 2023,
+      "month": "MAR",
+      "date": "Mar 1–2, 2023",
+      "role": "key organizer",
+      "title": "Collectively Intelligent Science Communication — Lessons learned for a post-COVID era",
+      "subtitle": "SciBeh 2023 Virtual Workshop",
+      "venue": "SciBeh · Online",
+      "url": "https://www.scibeh.org/events/workshop2023/"
+    }
+  ],
+  "feed": [
+    {
+      "id": "2026-dagstuhl-26241",
+      "dateLabel": "2026 · JUN",
+      "title": "Dagstuhl Seminar 26241 · Schloss Dagstuhl",
+      "description": "Invited participant at the Dagstuhl Seminar \"Social Intelligence in AI Systems\" (organisers: Flek, Hu, Sap, Ullman), 7-12 June 2026.",
+      "kind": "WS"
+    },
+    {
+      "id": "2026-krakow-talk",
+      "dateLabel": "2026 · MAY",
+      "title": "Conference talk · Kraków",
+      "description": "\"Boosting metacognition in entangled human-AI interaction to navigate cognitive-behavioural drift\" at the Kraków Conference on Misinformation and Polarization (Jagiellonian University).",
+      "kind": "TALK"
+    },
+    {
+      "id": "2026-boosting-metacognition",
+      "dateLabel": "2026 · FEB",
+      "title": "Boosting metacognition · arXiv (under review)",
+      "description": "Lead-author paper on cognitive-behavioural drift in entangled human-AI interaction submitted for journal review.",
+      "kind": "PUB"
+    },
+    {
+      "id": "2025-anti-autocracy-summit",
+      "dateLabel": "2025 · DEC",
+      "title": "SciBeh Anti-Autocracy Summit",
+      "description": "Member of the organising committee.",
+      "kind": "WS"
+    },
+    {
+      "id": "2025-london-bpp",
+      "dateLabel": "2025 · NOV",
+      "title": "Conference talk · London",
+      "description": "\"GenAI-Mediated Confirmation Bias in Health Information Seeking\" at the 4th International Behavioral Public Policy Conference, London.",
+      "kind": "TALK"
+    },
+    {
+      "id": "2025-bergen-talk",
+      "dateLabel": "2025 · OCT",
+      "title": "Invited talk · University of Bergen",
+      "description": "\"The Impact of Generative AI (Large Language Models) in Society\".",
+      "kind": "TALK"
+    },
+    {
+      "id": "2025-anti-autocracy-handbook",
+      "dateLabel": "2025 · JUN",
+      "title": "Anti-Autocracy Handbook · Zenodo",
+      "description": "Co-author of the SciBeh open-access handbook (Lewandowsky et al., 2025).",
+      "kind": "PUB"
+    },
+    {
+      "id": "2025-anyas",
+      "dateLabel": "2025 · APR",
+      "title": "ANYAS paper accepted",
+      "description": "GenAI-mediated confirmation bias in health information seeking accepted at the Annals of the New York Academy of Sciences. Press: Der Spiegel.",
+      "kind": "PUB"
+    },
+    {
+      "id": "2025-scibeh-autocracies",
+      "dateLabel": "2025 · FEB",
+      "title": "SciBeh 2025 workshop",
+      "description": "Co-organized the workshop on safeguarding scholarship in (emerging) autocracies.",
+      "kind": "WS"
+    },
+    {
+      "id": "2025-bsp-hypercustomization",
+      "dateLabel": "2025 · JAN",
+      "title": "BSP article on hypercustomization",
+      "description": "Co-authored the paper on GenAI's hypercustomization capabilities in Behavioral Science & Policy. Press: Der Spiegel.",
+      "kind": "PUB"
+    },
+    {
+      "id": "2024-nhb",
+      "dateLabel": "2024 · SEP",
+      "title": "Nature Human Behaviour paper",
+      "description": "Co-authored \"How large language models can reshape collective intelligence\". Press: Forbes, El País.",
+      "kind": "PUB"
+    },
+    {
+      "id": "2024-zeitenwende",
+      "dateLabel": "2024 · JUL",
+      "title": "Zeitenwende workshop · Hertie",
+      "description": "Co-organized a workshop at the Hertie School Summit 2024 on foreign policy and public opinion.",
+      "kind": "WS"
+    }
+  ],
+  "talks": [
+    {
+      "year": 2026,
+      "text": "2026 - Conference talk: \"Boosting metacognition in entangled human-AI interaction to navigate cognitive-behavioral drift\" - Kraków Conference on Misinformation and Polarization, Centre for Social Cognitive Studies, Jagiellonian University."
+    },
+    {
+      "year": 2025,
+      "text": "2025 - Invited talk: \"The Impact of Generative AI (Large Language Models) in Society\" - University of Bergen."
+    },
+    {
+      "year": 2025,
+      "text": "2025 - Conference talk: \"GenAI-Mediated Confirmation Bias in Health Information Seeking\" - 4th International Behavioral Public Policy Conference, London."
+    },
+    {
+      "year": 2025,
+      "text": "2025 - Conference talk (Burton & Lopez-Lopez): \"How generative artificial intelligence is changing master's theses\" - IC²S² 11th International Conference on Computational Social Science, Norrköping."
+    },
+    {
+      "year": 2025,
+      "text": "2025 - Invited talk: \"Characterizing Similarities and Differences in People's Views based on Open-ended Expressions\" - University of Basel."
+    },
+    {
+      "year": 2024,
+      "text": "2024 - Conference poster (Lopez-Lopez & Herzog): \"Leveraging LLMs and Networks to Analyze Collective Knowledge\" - European Group of Process-Tracing Studies (EGPROC), Berlin."
+    },
+    {
+      "year": 2024,
+      "text": "2024 - Invited talk (Lopez-Lopez & Herzog): \"Surfacing and Quantifying Citizens' Perspectives\" - Center for Planetary Health, University of Erfurt."
+    },
+    {
+      "year": 2024,
+      "text": "2024 - Conference poster (Lopez-Lopez & Herzog): \"Enhancing Knowledge Exploration Skills through AI-Assisted Brainstorming\" - Machine+Behaviour Conference, Berlin."
+    },
+    {
+      "year": 2024,
+      "text": "2024 - Conference poster (Lopez-Lopez & Hahn): \"Rapid Think Tanks (RTTs) - A Collectively-Intelligent Methodology for Collective Deliberation\" - ACM Collective Intelligence Conference, Work-in-Progress and Demonstrations, Delft."
+    },
+    {
+      "year": 2024,
+      "text": "2024 - Conference talk (Lopez-Lopez & Herzog): \"How do people navigate their ideas during problem scoping of open-ended ill-defined problems? A knowledge-graph-based approach\" - IC²S² 9th International Conference on Computational Social Science, Copenhagen."
+    },
+    {
+      "year": 2023,
+      "text": "2023 - Invited talk (Lopez-Lopez, Holford, Lewandowsky): \"Identification of Anti-Vaccination Trigger Arguments\" - TeDCog / BCSG Mini-conference, University of Bristol."
+    },
+    {
+      "year": 2021,
+      "text": "2021 - Conference poster (Herzog & Lopez-Lopez): \"Assisting behavioral science and evidence-based policy making using online machine tools\" - DFG Virtual Research Conference \"Preparedness for future pandemics from a global perspective\", Bonn."
+    }
+  ],
+  "media": [
+    {
+      "year": 2026,
+      "outlet": "ABC Cultural",
+      "url": "https://www.abc.es/cultura/cultural/neolengua-ia-hipnotiza-verborrea-maquinas-20260313173719-nt.html",
+      "text": "\"La neolengua de la IA\" (13 Mar 2026) - coverage of the Yakura et al. paper."
+    },
+    {
+      "year": 2025,
+      "outlet": "El País — Ideas",
+      "url": "https://elpais.com/ideas/2025-10-19/ya-empezamos-a-hablar-como-robots.html",
+      "text": "\"Efecto ChatGPT: ya empezamos a hablar todos como robots\" (19 Oct 2025) - coverage of the Yakura et al. paper."
+    },
+    {
+      "year": 2025,
+      "outlet": "DIE ZEIT",
+      "url": "https://www.zeit.de/digital/2025-07/sprachveraenderung-ki-woerter-chatgpt-forschung-gxe",
+      "text": "\"Das Besorgniserregende ist: Die Kontrolle liegt in wenigen Händen\" (29 Jul 2025) - interview with H. Yakura and E. Lopez-Lopez on AI-driven language change."
+    },
+    {
+      "year": 2025,
+      "outlet": "Scientific American",
+      "url": "https://www.scientificamerican.com/article/chatgpt-is-changing-the-words-we-use-in-conversation/",
+      "text": "\"ChatGPT Is Changing the Words We Use in Conversation\" (11 Jul 2025) - coverage of the Yakura et al. spoken-communication paper."
+    },
+    {
+      "year": 2025,
+      "outlet": "The Verge",
+      "url": "https://www.theverge.com/openai/686748/chatgpt-linguistic-impact-common-word-usage",
+      "text": "\"You sound like ChatGPT\" (20 Jun 2025) - coverage of the Yakura et al. spoken-communication paper."
+    },
+    {
+      "year": 2025,
+      "outlet": "Der Spiegel",
+      "url": "https://www.spiegel.de/netzwelt/kuenstliche-intelligenz-so-doof-macht-uns-chatgpt-a-3c46e246-4bdc-4007-acb0-07a35af4b208",
+      "text": "\"So doof macht uns ChatGPT\" (Spiegel+) - coverage citing Lopez-Lopez et al. on AI-mediated cognitive effects."
+    },
+    {
+      "year": 2024,
+      "outlet": "El País — Tecnología",
+      "url": "https://elpais.com/tecnologia/2024-10-24/los-humanos-ya-repiten-palabras-que-aprenden-de-chatgpt-como-ahondar-o-meticuloso.html",
+      "text": "\"Los humanos ya repiten palabras que aprenden de ChatGPT, como 'ahondar' o 'meticuloso'\" (24 Oct 2024) - coverage of the Yakura et al. paper."
+    },
+    {
+      "year": 2024,
+      "outlet": "Forbes",
+      "url": "https://www.forbes.com/sites/lanceeliot/2024/11/18/ai-is-now-co-creator-of-our-collective-intelligence-so-watch-your-back/",
+      "text": "\"AI Is Now Co-Creator Of Our Collective Intelligence So Watch Your Back\" (18 Nov 2024) - coverage of the Burton et al. NHB paper."
+    }
+  ]
+}

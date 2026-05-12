@@ -1,0 +1,73 @@
+# =============================================================================
+# Public website repo — strict exclusions to prevent leakage of non-public
+# material from the parent Profile quest into the GitHub Pages deployment.
+#
+# This site is published at www.ezequiellopezlopez.org. Anything committed
+# here is PUBLIC. When in doubt, exclude.
+# =============================================================================
+
+# OS / IDE clutter
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python / venv (in case any tooling is added later)
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Node / build artefacts (in case any tooling is added later)
+node_modules/
+dist/
+build/
+.cache/
+
+# LaTeX byproducts — should never appear here, but guard anyway
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+
+# =============================================================================
+# Non-public material from the parent Profile quest — must NEVER land in
+# this repo. Folder names mirror the conventions used at ~/ezequiel/Quests/Profile/.
+# =============================================================================
+
+# Application materials (cover letters, custom CVs, drafts per opportunity)
+applications/
+application/
+cover_letter*/
+cover-letter*/
+
+# Internal notes, drafts, scratch
+_drafts/
+_notes/
+_inbox/
+_local_*/
+drafts/
+notes/
+
+# Profile database and any private synced sources
+profile-database.md
+*.private.md
+*.draft.md
+
+# Career / strategy / planning material
+career_log.md
+trajectory*.md
+
+# Anything explicitly marked as private
+*-private.*
+*_private.*
+PRIVATE/
+private/

@@ -1,0 +1,1405 @@
+/* =============================================================================
+   SANDBOX MODERN V2 — clean rewrite (2026-05-07).
+   Apple-paced, Wes Anderson palette, vertical-after-press trajectory.
+   Single source of truth — no duplicate selectors.
+   ============================================================================= */
+
+:root {
+  --paper:        #ffffff;
+  --paper-2:      #fafaf6;
+  --ink:          #0d0d0e;
+  --ink-2:        #2c2c2e;
+  --ink-3:        #5a5a5c;
+  --ink-4:        #98989d;
+  --rule-fine:    #ececea;
+  --rule-soft:    #d4d2cc;
+
+  --mustard:      #c9a66b;
+  --mustard-deep: #a98847;
+  --olive:        #697053;
+  --olive-deep:   #4d533a;
+  --rust:         #c14b1f;
+  --rust-deep:    #983715;
+  --pink:         #e6b9ad;
+  --pink-deep:    #b8746a;
+  --navy:         #2c4a6b;
+  --navy-deep:    #1a3554;
+}
+
+body.dark {
+  --paper:        #0a0a0c;
+  --paper-2:      #14141a;
+  --ink:          #f0eee9;
+  --ink-2:        #c8c4bc;
+  --ink-3:        #8a857c;
+  --ink-4:        #5a554d;
+  --rule-fine:    #2a2a2c;
+  --rule-soft:    #3a3a3c;
+}
+
+
+/* =============================================================================
+   BASE
+   ============================================================================= */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body, .nav, .tile, .photo, .stop-logo, .koenigsberg, .press-item .thumb img, .v-fill, .v-circle {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, filter 0.25s ease, fill 0.25s ease;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(13,13,14,0.22);
+  transition: color 0.15s, border-color 0.15s;
+}
+body.dark a { border-bottom-color: rgba(240,238,233,0.22); }
+a:hover { color: var(--mustard-deep); border-bottom-color: var(--mustard-deep); }
+body.dark a:hover { color: var(--mustard); border-bottom-color: var(--mustard); }
+
+h1, h2, h3, h4 { font-weight: 500; color: var(--ink); }
+img { max-width: 100%; }
+
+
+/* =============================================================================
+   NAV — sticky, frosted glass
+   ============================================================================= */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+body.dark .nav {
+  background: rgba(10,10,12,0.78);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+.nav-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0.85rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.brand {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink);
+  border: none;
+  letter-spacing: -0.005em;
+}
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+  font-size: 0.84rem;
+}
+.nav-links a {
+  color: var(--ink-2);
+  border: none;
+}
+.nav-links a:hover { color: var(--mustard-deep); }
+body.dark .nav-links a:hover { color: var(--mustard); }
+.nav-end {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav-cv {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--ink);
+  border: none;
+}
+.nav-cv:hover { color: var(--mustard-deep); }
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--ink-3);
+  transition: color 0.15s, background 0.15s;
+}
+.theme-toggle:hover { color: var(--ink); background: rgba(0,0,0,0.05); }
+body.dark .theme-toggle:hover { background: rgba(255,255,255,0.08); }
+.theme-toggle .theme-icon { width: 16px; height: 16px; }
+.theme-toggle .theme-sun  { display: none; }
+.theme-toggle .theme-moon { display: inline-block; }
+body.dark .theme-toggle .theme-sun  { display: inline-block; }
+body.dark .theme-toggle .theme-moon { display: none; }
+
+
+/* =============================================================================
+   PAGE CONTAINER
+   ============================================================================= */
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+
+/* =============================================================================
+   HERO
+   ============================================================================= */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 3.5rem 0 3rem;
+  border-bottom: 1px solid var(--rule-fine);
+}
+.hero-left .photo {
+  position: relative;
+  width: 220px;
+  aspect-ratio: 4 / 3;        /* matches the source photo (2400×1800) */
+  margin-bottom: 1.4rem;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--paper);
+  box-shadow: 0 0 0 1px rgba(201,166,107,0.22), 0 10px 26px rgba(0,0,0,0.10);
+  transition: box-shadow 0.35s ease;
+}
+.hero-left .photo:hover {
+  box-shadow: 0 0 0 1px var(--mustard-deep), 0 14px 32px rgba(201,166,107,0.18);
+}
+.hero-left .photo canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body.dark .hero-left .photo {
+  box-shadow: 0 0 0 1px rgba(201,166,107,0.30), 0 10px 26px rgba(0,0,0,0.40);
+}
+
+.hero-left h1 {
+  font-size: clamp(2.6rem, 4.4vw, 3.8rem);
+  font-weight: 200;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  margin: 0 0 0.5rem;
+  color: var(--ink);
+}
+.hero-left h1 strong { font-weight: 600; }
+.hero-left .role {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 1.18rem;
+  line-height: 1.35;
+  color: var(--ink-2);
+  margin: 0 0 0.6rem;
+}
+.hero-left .role-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1.1rem;
+  font-family: "Source Serif 4", Georgia, serif;
+  max-width: 32em;
+}
+.hero-left .role-detail .role-lines {
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 0.96rem;
+  line-height: 1.42;
+}
+.hero-left .role-detail .role-lines em { font-style: italic; }
+.hero-left .role-detail .role-brace {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 200;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--ink-3);
+  transform: scaleY(1.55);
+  transform-origin: center;
+  display: inline-block;
+  margin: 0 0.05rem;
+  user-select: none;
+}
+.hero-left .role-detail .role-policy {
+  font-style: italic;
+  color: var(--ink-3);
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
+.hero-left .affiliations {
+  list-style: none;
+  margin: 0 0 1.4rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+.hero-left .affiliations li {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+  line-height: 1.45;
+}
+.hero-left .affiliations a {
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--rule-soft);
+  text-decoration: none;
+}
+.hero-left .affiliations a:hover {
+  color: var(--mustard-deep);
+  border-bottom-color: var(--mustard-deep);
+}
+.hero-left .bio {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0 0 1.5rem;
+  max-width: 30em;
+}
+.hero-left .bio strong { color: var(--ink); font-weight: 600; }
+
+.hero-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.btn {
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  padding: 0.6rem 1.15rem;
+  background: var(--ink);
+  color: var(--paper) !important;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.btn:hover { background: var(--mustard-deep); border-color: var(--mustard-deep); }
+body.dark .btn { background: var(--ink); color: var(--paper) !important; border-color: var(--ink); }
+body.dark .btn:hover { background: var(--mustard-deep); border-color: var(--mustard-deep); color: #fff !important; }
+
+.hero-icons {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+}
+.icn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: none;
+  color: var(--ink-3);
+  transition: color 0.15s, background 0.15s;
+}
+.icn:hover { color: var(--mustard-deep); background: rgba(0,0,0,0.04); }
+body.dark .icn:hover { background: rgba(255,255,255,0.06); }
+.icn svg { width: 16px; height: 16px; fill: currentColor; display: block; }
+
+.koenigsberg {
+  display: block;
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  margin-left: auto;
+  filter: contrast(1.06);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+body.dark .koenigsberg {
+  filter: invert(0.92) contrast(1.05) brightness(0.95);
+}
+
+/* Live morph in the hero (replaces the static Königsberg engraving).
+   Fixed dimensions so the figure doesn't shift under the morph. */
+.hero-morph {
+  display: block;
+  width: 540px;
+  max-width: 100%;
+  margin-left: auto;
+}
+.hero-morph canvas {
+  display: block;
+  width: 540px;
+  height: 405px;
+  max-width: 100%;
+  background: #ffffff;
+}
+body.dark .hero-morph canvas { background: #ffffff; }
+@media (max-width: 600px) {
+  .hero-morph canvas { width: 100%; height: auto; aspect-ratio: 4 / 3; }
+}
+.hero-morph-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  margin-top: 0.65rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--rule-fine);
+}
+.hero-morph-stats {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  color: var(--mustard-deep);
+  line-height: 1.4;
+}
+body.dark .hero-morph-stats { color: var(--mustard); }
+
+
+/* =============================================================================
+   TRUST STRIP — clickable, links to #press
+   ============================================================================= */
+a.trust-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;
+  padding: 1.2rem 0 1.6rem 5rem;     /* nudge the row to the right */
+  border-top: 1px solid var(--rule-fine);
+  border-bottom: 1px solid var(--rule-fine);
+  text-decoration: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+a.trust-strip:hover { background: rgba(0,0,0,0.02); }
+body.dark a.trust-strip:hover { background: rgba(255,255,255,0.04); }
+.trust-label {
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  font-weight: 500;
+  margin-right: 0.6rem;
+}
+.trust-strip .wm {
+  filter: grayscale(0.5);
+  opacity: 0.78;
+  transition: opacity 0.15s, filter 0.15s;
+  font-size: 1.12rem;                  /* ~18% larger wordmarks */
+}
+.trust-strip .wm:hover { opacity: 1; filter: grayscale(0); }
+
+
+/* =============================================================================
+   SECTIONS
+   ============================================================================= */
+.section { margin: 4rem 0 3.5rem; }
+.section-title {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 300;
+  letter-spacing: -0.024em;
+  color: var(--ink);
+  margin: 0 0 0.4rem;
+  line-height: 1.1;
+}
+.section-sub {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--ink-3);
+  margin: 0 0 1.8rem;
+}
+.section-sub a { color: var(--ink-3); }
+
+
+/* =============================================================================
+   RESEARCH — Venn + threads
+   ============================================================================= */
+.research {
+  display: grid;
+  grid-template-columns: minmax(0, 600px) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: center;
+}
+.venn { width: 100%; height: auto; display: block; }
+/* Three colour-tinted circles, no stroke. Very light fills — the overlapping
+   regions (where two/three colours layer) carry the visual focus. */
+.venn .v-fill          { stroke: none; fill-opacity: 0.085; }
+.venn .v-fill-qual     { fill: var(--mustard); }
+.venn .v-fill-ai       { fill: var(--olive); }
+.venn .v-fill-policy   { fill: var(--rust); }
+body.dark .venn .v-fill { fill-opacity: 0.14; }
+.venn .v-label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: var(--ink);
+}
+.venn .v-pair {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 13.5px;
+  fill: var(--ink-3);
+}
+.venn .v-center-label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  fill: var(--ink);
+}
+body.dark .venn .v-center-label { fill: var(--paper); }
+
+/* Paper dots — three status markers, all in ink:
+     • published       → solid disc      (●)
+     • under review    → ring + inner    (◎)
+     • in preparation  → hollow ring     (○)
+   Region/intersection is read off the tinted circles, not the dot. */
+.venn .dot                { fill: var(--ink); stroke: none; cursor: help; }
+.venn .dot-prep           { fill: var(--paper); stroke: var(--ink); stroke-width: 1.6; }
+.venn .dot-review-ring    { fill: var(--paper); stroke: var(--ink); stroke-width: 1.6; cursor: help; }
+.venn .dot-review-inner   { fill: var(--ink); pointer-events: none; }
+.venn .dot-prep-legend    { fill: var(--paper); stroke: var(--ink); stroke-width: 1.6; }
+body.dark .venn .dot              { fill: var(--ink); }
+body.dark .venn .dot-prep         { fill: var(--paper); stroke: var(--ink); }
+body.dark .venn .dot-review-ring  { fill: var(--paper); stroke: var(--ink); }
+body.dark .venn .dot-review-inner { fill: var(--ink); }
+body.dark .venn .dot-prep-legend  { fill: var(--paper); stroke: var(--ink); }
+
+/* Citation tooltip — instant on hover */
+.venn-tooltip {
+  position: fixed;
+  z-index: 200;
+  max-width: 340px;
+  padding: 0.55rem 0.75rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  left: 0;
+  top: 0;
+}
+.venn-tooltip[data-show="1"] { opacity: 1; }
+body.dark .venn-tooltip { background: var(--paper); color: var(--ink); }
+
+.venn .legend {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  fill: var(--ink-3);
+}
+
+/* RESEARCH side panel — three blocks mapped 1:1 to the three Venn circles.
+   Each block: circle name (colour-coded eyebrow) + italic goal lede +
+   "methods so far" line. */
+.rs-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.rs-block {
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule-fine);
+}
+.rs-block:first-child { border-top: none; padding-top: 0; }
+.rs-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.55rem;
+}
+.rs-block.rs-qual    .rs-label { color: var(--mustard-deep); }
+.rs-block.rs-impacts .rs-label { color: var(--olive-deep); }
+.rs-block.rs-policy  .rs-label { color: var(--rust-deep); }
+
+.rs-goal {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin: 0 0 0.5rem;
+}
+.rs-goal em { font-style: italic; color: var(--ink); }
+.rs-goal strong { color: var(--ink); font-weight: 600; }
+
+.rs-methods {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-3);
+  margin: 0;
+}
+.rs-methods em { font-style: italic; color: var(--ink-2); }
+.rs-meta {
+  font-family: "Inter", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-right: 0.25rem;
+}
+
+
+/* =============================================================================
+   PAPERS AS TILES + SHOW MORE
+   ============================================================================= */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.2rem 1.25rem 1.1rem;
+  background: var(--paper-2);
+  border: none;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+.tile:hover {
+  background: #f1ede2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+}
+body.dark .tile { background: #14141a; }
+body.dark .tile:hover { background: #1c1c22; }
+.tile-hidden { display: none; }
+.tiles.tiles-expanded .tile-hidden { display: flex; }
+
+.tile-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.4rem;
+}
+.tile-type {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 0.18rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.04);
+}
+body.dark .tile-type { background: rgba(255,255,255,0.06); }
+.tile.tile-journal  .tile-type { color: var(--olive-deep); background: rgba(105,112,83,0.08); }
+.tile.tile-review   .tile-type { color: var(--mustard-deep); background: rgba(201,166,107,0.13); }
+.tile.tile-preprint .tile-type { color: var(--olive-deep); background: rgba(105,112,83,0.08); }
+.tile.tile-handbook .tile-type { color: var(--rust-deep); background: rgba(193,75,31,0.08); }
+.tile-meta {
+  display: flex;
+  gap: 0.6rem;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.68rem;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+.tile-yr { color: var(--ink); }
+.tile-title {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.32;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  margin: 0.15rem 0 0.4rem;
+}
+.tile-au {
+  font-size: 0.82rem;
+  color: var(--ink-3);
+  line-height: 1.45;
+  margin: 0;
+}
+.tile-ve {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  margin-top: 0.25rem;
+}
+.tile-press {
+  margin-top: auto;
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+body.dark .tile-press { border-top-color: rgba(255,255,255,0.08); }
+
+.show-more-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.6rem;
+}
+.show-more {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: transparent;
+  border: 1px solid var(--rule-soft);
+  border-radius: 999px;
+  padding: 0.55rem 1.4rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.show-more:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: rgba(0,0,0,0.02);
+}
+body.dark .show-more:hover { background: rgba(255,255,255,0.04); }
+
+
+/* =============================================================================
+   PRESS — wall + image grid
+   ============================================================================= */
+.press-wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem 2.6rem;
+  align-items: center;
+  padding: 1.4rem 0 2rem;
+  margin-bottom: 2.4rem;
+  border-top: 1px solid var(--rule-fine);
+  border-bottom: 1px solid var(--rule-fine);
+}
+.press-wall .wm {
+  filter: grayscale(0.35);
+  opacity: 0.78;
+  transition: opacity 0.15s, filter 0.15s;
+}
+.press-wall .wm:hover { opacity: 1; filter: grayscale(0); }
+
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.4rem 1.6rem;
+}
+.press-item { display: flex; flex-direction: column; }
+.press-item .thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--paper-2);
+  margin-bottom: 0.85rem;
+  filter: contrast(1.02) saturate(0.94);
+  border-radius: 4px;
+}
+.press-item .thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease-out;
+}
+body.dark .press-item .thumb img { filter: contrast(1.05) saturate(0.88) brightness(0.94); }
+.press-item:hover .thumb img { transform: scale(1.03); }
+.press-item .thumb.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--ink-4);
+  border: 1px solid var(--rule-fine);
+}
+.press-item .outlet { display: none; }  /* wordmark above replaces this */
+.press-item .date {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.7rem;
+  color: var(--ink-4);
+  margin-top: 0.18rem;
+  font-weight: 500;
+}
+.press-item h3 {
+  margin: 0.4rem 0 0;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.02rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.press-item h3 a { color: var(--ink); border-bottom: none; }
+.press-item h3 a:hover { color: var(--mustard-deep); }
+.press-item .wm {
+  margin-bottom: 0.55rem;
+  font-size: 1.05rem;
+}
+
+
+/* =============================================================================
+   TRAJECTORY (in flow, after Press) — vertical timeline + prose narrative
+   ============================================================================= */
+.tj-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 680px) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+  margin-top: 0.4rem;
+}
+.tj-key {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 0.66rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.4rem;
+}
+.tj-key-acad { color: var(--mustard-deep); }
+.tj-key-indu { color: var(--olive-deep); }
+.tj-key-educ { color: var(--rust-deep); }
+
+.tj-stops {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+/* Central spine at 50% of the timeline column. The spine extends through the
+   bottom dwell-padding and fades out so the last stop has a graceful tail. */
+.tj-stops::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom,
+    var(--rule-soft) 0%,
+    var(--rule-soft) 78%,
+    transparent 100%);
+  transform: translateX(-50%);
+}
+/* Three-column grid: content-left | marker | content-right */
+.tj-stop {
+  display: grid;
+  grid-template-columns: 1fr 16px 1fr;
+  gap: 0;
+  padding: 0.7rem 0 0.85rem;
+  position: relative;
+}
+/* Marker always sits in the center column (the spine) */
+.tj-marker {
+  grid-column: 2;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+  margin-top: 0.5rem;
+  margin-left: 0;
+  z-index: 1;
+  justify-self: center;
+}
+/* Content placement by side */
+.tj-stop.tj-left  .tj-content { grid-column: 1; text-align: right; padding-right: 1.4rem; align-items: flex-end; }
+.tj-stop.tj-right .tj-content { grid-column: 3; text-align: left;  padding-left:  1.4rem; align-items: flex-start; }
+/* Parallel pair — two content blocks at the same y-level, marker between */
+.tj-stop.tj-parallel .tj-side-left   { grid-column: 1; text-align: right; padding-right: 1.4rem; align-items: flex-end; }
+.tj-stop.tj-parallel .tj-side-right  { grid-column: 3; text-align: left;  padding-left:  1.4rem; align-items: flex-start; }
+.tj-stop.tj-parallel .tj-side-left  .tj-logo { justify-content: flex-end; }
+.tj-stop.tj-parallel .tj-side-right .tj-logo { justify-content: flex-start; }
+
+/* IBM combined · two-row stack inside a single content block */
+.tj-content.tj-ibm-combined .tj-ibm-row {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 0.74rem;
+  color: var(--ink-3);
+  line-height: 1.35;
+  margin-top: 0.18rem;
+}
+.tj-content.tj-ibm-combined .tj-ibm-row strong {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.74rem;
+  color: var(--ink-2);
+  letter-spacing: -0.005em;
+}
+/* Markers are neutral — colour belongs to the text on each side. */
+.tj-stop.tj-current .tj-marker {
+  width: 15px; height: 15px;
+  margin-top: 0.45rem;
+  background: var(--ink);
+  border: 2px solid var(--ink);
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.08);
+}
+body.dark .tj-stop.tj-current .tj-marker {
+  background: var(--paper);
+  border-color: var(--paper);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.10);
+}
+
+/* Category text colour — applied per content block via tj-cat-* class so a
+   parallel pair can carry one colour on the left and another on the right. */
+.tj-content.tj-cat-acad .tj-role,
+.tj-content.tj-cat-acad .tj-year { color: var(--mustard-deep); }
+.tj-content.tj-cat-indu .tj-role,
+.tj-content.tj-cat-indu .tj-year { color: var(--olive-deep); }
+.tj-content.tj-cat-educ .tj-role,
+.tj-content.tj-cat-educ .tj-year { color: var(--rust-deep); }
+body.dark .tj-content.tj-cat-acad .tj-role,
+body.dark .tj-content.tj-cat-acad .tj-year { color: var(--mustard); }
+body.dark .tj-content.tj-cat-indu .tj-role,
+body.dark .tj-content.tj-cat-indu .tj-year { color: var(--olive); }
+body.dark .tj-content.tj-cat-educ .tj-role,
+body.dark .tj-content.tj-cat-educ .tj-year { color: var(--pink); }
+.tj-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  min-width: 0;
+}
+.tj-logo {
+  min-height: 26px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+  filter: grayscale(0.9) contrast(1.05) opacity(0.86);
+  transition: filter 0.18s, opacity 0.18s;
+}
+.tj-stop.tj-left  .tj-logo { justify-content: flex-end; }
+.tj-stop.tj-right .tj-logo { justify-content: flex-start; }
+.tj-logo img {
+  height: 22px;
+  width: auto;
+  max-width: 110px;
+  object-fit: contain;
+}
+/* Per-institution height tuning — visual weight, not pixel parity */
+.tj-logo img[alt="TU Dresden"],
+.tj-logo img[alt="MPI for Human Development"],
+.tj-logo img[alt="Deutsche Bahn"],
+.tj-logo img[alt="UNED Madrid"],
+.tj-logo img[alt="Universidad de Granada"] { height: 30px; }
+.tj-logo img[alt="IBM"] { height: 18px; }
+.tj-stop:hover .tj-logo { filter: grayscale(0) contrast(1.05) opacity(1); }
+.tj-year {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+  font-weight: 600;
+}
+.tj-role {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+}
+.tj-org {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  line-height: 1.4;
+}
+/* Education stops are quieter than academia / industry — smaller fonts,
+   reduced visual weight (degree milestones, not narrative chapters). */
+.tj-stop.tj-education .tj-role { font-size: 0.76rem; font-weight: 500; }
+.tj-stop.tj-education .tj-org  { font-size: 0.7rem; }
+.tj-stop.tj-education .tj-year { font-size: 0.6rem; }
+.tj-thesis {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 0.74rem;
+  color: var(--ink-3);
+  line-height: 1.4;
+  opacity: 0.9;
+  margin-top: 0.1rem;
+}
+
+.tj-prose {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  padding-top: 0.4rem;
+  position: sticky;
+  top: 5.2rem;            /* clear the sticky nav */
+  align-self: start;       /* don't stretch with the timeline */
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+.tj-bio-stage {
+  transition: opacity 0.24s ease;
+}
+.tj-bio-stage.is-fading { opacity: 0; }
+.tj-bio-stage p { margin: 0 0 0.7rem; }
+.tj-bio-stage .tj-hint {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin-top: 1.2rem;
+}
+.tj-prose .tj-lede {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 1.04rem;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 0.95rem;
+  letter-spacing: -0.005em;
+}
+/* Extra scroll-dwell after the last stop so its bio has time to be read
+   before the sticky panel detaches at the section bottom. */
+.tj-stops { padding-bottom: 30vh; }
+/* Hide the <template> child of timeline stops (templates are inert by spec
+   but defensive in case of older browsers). */
+.tj-stop > template { display: none; }
+.tj-prose p { margin: 0 0 1rem; }
+.tj-prose strong { color: var(--ink); font-weight: 600; }
+.tj-prose em { color: var(--ink); font-style: italic; }
+
+.more-link {
+  margin: 1.6rem 0 0;
+  text-align: right;
+  font-size: 0.86rem;
+}
+.more-link a {
+  color: var(--ink-3);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.more-link a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+
+/* =============================================================================
+   INDUSTRY TRACK (inside trajectory bio)
+   ============================================================================= */
+.industry-track {
+  margin: 1.5rem 0 1.6rem;
+  padding: 1rem 1.1rem 0.9rem;
+  border-left: 3px solid var(--olive);
+  background: rgba(105, 112, 83, 0.04);
+  border-radius: 2px;
+}
+body.dark .industry-track { background: rgba(105, 112, 83, 0.10); }
+.industry-track h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.55rem;
+  color: var(--olive-deep);
+}
+body.dark .industry-track h3 { color: var(--mustard); }
+.industry-track > p {
+  margin: 0 0 0.7rem;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.industry-projects {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+}
+.industry-projects li {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.05rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--rule-fine);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+.industry-projects li:first-child { border-top: none; }
+.industry-projects strong {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.78rem;
+  letter-spacing: -0.005em;
+}
+.industry-projects .ip-role {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  color: var(--ink-3);
+}
+.industry-projects em {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  color: var(--ink-3);
+  font-size: 0.78rem;
+}
+
+
+/* =============================================================================
+   GRANTS & FUNDED PROJECTS
+   ============================================================================= */
+.grants-list { list-style: none; margin: 0; padding: 0; }
+.grants-list li {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1.4rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule-fine);
+  align-items: baseline;
+}
+.grants-list li:first-child { border-top: none; }
+.grants-list .yr {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.7rem;
+  color: var(--ink-3);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.grants-list .g-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+.grants-list .g-role {
+  font-family: "Inter", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--olive-deep);
+}
+body.dark .grants-list .g-role { color: var(--mustard); }
+.grants-list .g-title {
+  font-family: "Inter", sans-serif;
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+}
+.grants-list a.g-title {
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.grants-list a.g-title:hover {
+  color: var(--mustard-deep);
+  border-bottom-color: var(--mustard-deep);
+}
+.grants-list .g-title-orig {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  line-height: 1.35;
+  margin-top: 0.1rem;
+}
+.grants-list .g-funder {
+  font-family: "Inter", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  margin-top: 0.25rem;
+}
+.grants-list .g-team {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.66rem;
+  color: var(--ink-3);
+  letter-spacing: 0.02em;
+  margin-top: 0.15rem;
+  line-height: 1.4;
+}
+.grants-list .g-summary {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.86rem;
+  color: var(--ink-2);
+  line-height: 1.55;
+  margin: 0.5rem 0 0;
+}
+
+
+/* =============================================================================
+   ORGANISED WORKSHOPS
+   ============================================================================= */
+.workshops-list { list-style: none; margin: 0; padding: 0; }
+.workshops-list li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.4rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--rule-fine);
+  align-items: baseline;
+}
+.workshops-list li:first-child { border-top: none; }
+.workshops-list .yr {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.7rem;
+  color: var(--ink-3);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.workshops-list .ws-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+.workshops-list .ws-role {
+  font-family: "Inter", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--olive-deep);
+}
+body.dark .workshops-list .ws-role { color: var(--mustard); }
+.workshops-list .ws-title {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 0.86rem;
+  color: var(--ink-2);
+  line-height: 1.4;
+}
+.workshops-list a.ws-title {
+  border-bottom: 1px solid var(--rule-soft);
+  text-decoration: none;
+  color: var(--ink-2);
+}
+.workshops-list a.ws-title:hover {
+  color: var(--mustard-deep);
+  border-bottom-color: var(--mustard-deep);
+}
+.workshops-list .ws-sub {
+  font-family: "Inter", sans-serif;
+  font-size: 0.74rem;
+  color: var(--ink-3);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 0.1rem;
+}
+.workshops-list .ws-venue {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.66rem;
+  color: var(--ink-4);
+  letter-spacing: 0.04em;
+  margin-top: 0.15rem;
+}
+
+
+/* =============================================================================
+   TALKS
+   ============================================================================= */
+.talks-list { list-style: none; margin: 0; padding: 0; }
+.talks-list li {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.4rem;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--rule-fine);
+  align-items: baseline;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 0.96rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+.talks-list li:first-child { border-top: none; }
+.talks-list .yr {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+.more {
+  margin-top: 1.4rem;
+  border-top: 1px solid var(--rule-fine);
+  padding-top: 1rem;
+}
+.more > summary {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--ink-3);
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0;
+}
+.more > summary::-webkit-details-marker { display: none; }
+.more > summary::before {
+  content: "▸";
+  font-size: 0.7rem;
+  color: var(--ink-3);
+  transition: transform 0.18s;
+}
+.more[open] > summary::before { transform: rotate(90deg); }
+.more > summary:hover { color: var(--mustard-deep); }
+.more .more-count { color: var(--ink-4); font-weight: 400; }
+.section#work > details.more { display: none; }
+
+
+/* =============================================================================
+   COLOPHON
+   ============================================================================= */
+.colophon {
+  margin-top: 4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule-fine);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--ink-4);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.colophon a { color: var(--ink-4); border-bottom: 1px dotted var(--ink-4); }
+.colophon a:hover { color: var(--mustard-deep); border-bottom-style: solid; border-bottom-color: var(--mustard-deep); }
+
+
+/* =============================================================================
+   WORDMARKS — outlet brand-correct text styles
+   ============================================================================= */
+.wm {
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  line-height: 1;
+  user-select: none;
+}
+.wm-sciam {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic; font-weight: 600;
+  font-size: 1.05rem;
+  color: #c9332e;
+  letter-spacing: -0.01em;
+}
+.wm-verge {
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.wm-verge::after { content: " ▿"; color: #ff5252; font-weight: 600; margin-left: 0.05em; }
+.wm-elpais {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 700; font-size: 1rem;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.wm-zeit {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic; font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.wm-spiegel {
+  font-weight: 800; font-size: 0.94rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #e34d3a;
+}
+.wm-forbes {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-style: italic; font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+}
+.wm-abc {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 700; font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: #e22030;
+}
+.wm-default {
+  font-size: 0.86rem; font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--ink);
+}
+
+
+/* =============================================================================
+   HIDE LEGACY ELEMENTS (kept in markup for safety)
+   ============================================================================= */
+.ts, #ts-removed,
+#trajectory-section-hidden,
+.tt-wrap, .tt, .tt-band, .tt-stop, .tt-spine,
+.timeline,
+.path-wrap, .stops, .stop, .stop-spine,
+.path-key {
+  display: none !important;
+}
+/* Re-enable the inner `.tj-stops` (matches more specific selector if needed) */
+#trajectory .tj-stops { display: block !important; }
+
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+@media (max-width: 940px) {
+  .page { padding: 0 1.6rem 4rem; }
+  .nav-inner { padding: 0.85rem 1.6rem; }
+  .nav-links { display: none; }
+
+  .hero { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 0 2.5rem; }
+  .koenigsberg { max-width: 100%; }
+
+  .research { grid-template-columns: 1fr; gap: 2rem; }
+  .tj-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* Collapse two-sided trajectory to single column on narrow viewports */
+  .tj-stops::before { left: 8px; transform: none; }
+  .tj-stop {
+    grid-template-columns: 16px 1fr;
+    gap: 1rem;
+  }
+  .tj-stop.tj-left  .tj-content,
+  .tj-stop.tj-right .tj-content {
+    grid-column: 2;
+    text-align: left;
+    padding: 0;
+    align-items: flex-start;
+  }
+  .tj-marker { grid-column: 1; justify-self: start; }
+  .tj-stop.tj-left  .tj-logo,
+  .tj-stop.tj-right .tj-logo { justify-content: flex-start; }
+}
